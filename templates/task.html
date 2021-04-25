@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1>Tasks</h1>&nbsp; <a href="/delete?rid={{id}}">Clear</a>
+    <ul>
+        {% for todo in todos %}
+            <li>{{ todo["task_name"] }}</li>
+        {% endfor %}
+    </ul>
+
+    <input id="rid" type="hidden" name="registrant_id" value="{{rid}}">
+    <a href="/add?rid={{id}}">Create a New Task</a>
+{% endblock %}
